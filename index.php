@@ -146,8 +146,10 @@ class MyTest extends test
 
 // Segault
 echo __CLASS__ . ':' . __LINE__ . ' > Running testOne: should segfault ' . PHP_EOL;
-(new MyTest(StdClass::class))->run('testOne');
+$t = new MyTest('StdClass');
+$t->run('testOne');
 
 // No segfault
 echo __CLASS__ . ':' . __LINE__ . ' > Running testTwo: should not segfault ' . PHP_EOL;
-(new MyTest(StdClass::class))->run('testTwo');
+$t = new MyTest('StdClass');
+$t->run('testTwo');
